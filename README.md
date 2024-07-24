@@ -6,7 +6,7 @@
 
 |팀장|프론트|프론트|백엔드|백엔드|디자인|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|<img src="https://avatars.githubusercontent.com/skybro2004" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/when630" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/YujunOh" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/sheepGun" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/Sehyeonpark24" width="100rem"></img>
+|<img src="https://avatars.githubusercontent.com/skybro2004" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/when630" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/YujunOh" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/sheepGun" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/Haseokheon" width="100rem"></img>|<img src="https://avatars.githubusercontent.com/Sehyeonpark24" width="100rem"></img>
 |신준|임재언|오유준|양현군|하석현|박세현|
 
 ---
