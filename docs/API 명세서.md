@@ -1,6 +1,7 @@
 # API 명세서
 
 ---
+[노션 링크](https://transparent-innovation-ab0.notion.site/API-efdb45bc655c4c61a7b9bb32392147ef?pvs=4)
 
 # /test
 
