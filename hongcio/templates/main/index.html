@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍시오</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('fonts/Pretendard-Regular.woff') format('woff');
+            /* Pretendard Regular */
+        }
+
+        @font-face {
+            font-family: 'Bagel Fat One';
+            src: url('fonts/BagelFatOne-Regular.ttf') format('ttf');
+            /* Bagel Fat One */
+        }
+
+        body {
+            background-color: #4A75c7;
+            /* 배경색 */
+            color: #FFFFFF;
+            /* 기본 글자색 */
+            font-family: 'Pretendard', sans-serif;
+            /* 기본 폰트 */
+            text-align: center;
+            /* 중앙 정렬 */
+            margin: 0;
+            /* 기본 여백 제거 */
+            padding: 0;
+            /* 기본 패딩 제거 */
+            height: 100vh;
+            /* 전체 높이 설정 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* 중앙 정렬 */
+            align-items: center;
+            /* 가로 중앙 정렬 */
+        }
+
+        h2 {
+            font-size: 24px;
+            /* 부제목 크기 조정 */
+            margin: 10px 0;
+            /* 상단 및 하단 여백 */
+            color: #FFFFFF;
+            /* 주석 색상 변경 */
+        }
+
+        .button {
+            display: inline-block;
+            /* 버튼을 블록으로 설정 */
+            width: 414px;
+            /* 버튼 너비 */
+            height: 66px;
+            /* 버튼 높이 */
+            background-color: #c8d9fa;
+            /* 버튼 배경색 */
+            color: black;
+            /* 버튼 글자색 */
+            border: none;
+            /* 버튼 테두리 제거 */
+            border-radius: 10px;
+            /* 버튼 모서리 둥글게 */
+            font-size: 20px;
+            /* 버튼 글자 크기 조정 */
+            line-height: 66px;
+            /* 버튼 텍스트 수직 정렬 */
+            text-decoration: none;
+            /* 버튼 텍스트 밑줄 제거 */
+            margin: 20px 0;
+            /* 버튼 상단 및 하단 여백 */
+        }
+
+        .small-button {
+            display: inline-block;
+            /* 버튼을 블록으로 설정 */
+            width: 126.75px;
+            /* 버튼 너비 */
+            height: 36px;
+            /* 버튼 높이 */
+            background-color: #c8d9fa;
+            /* 버튼 배경색 */
+            color: black;
+            /* 버튼 글자색 */
+            border: none;
+            /* 버튼 테두리 제거 */
+            border-radius: 10px;
+            /* 버튼 모서리 둥글게 */
+            font-size: 16px;
+            /* 버튼 글자 크기 조정 */
+            line-height: 36px;
+            /* 버튼 텍스트 수직 정렬 */
+            text-decoration: none;
+            /* 버튼 텍스트 밑줄 제거 */
+            margin: 6.25px;
+            /* 버튼 간 여백 */
+        }
+
+        footer {
+            background-color: #bcbecc;
+            /* 푸터 배경색 */
+            width: 100%;
+            /* 푸터 너비 */
+            height: 40px;
+            /* 푸터 높이 */
+            position: absolute;
+            /* 절대 위치 지정 */
+            bottom: 0;
+            /* 하단 여백 */
+            left: 0;
+            /* 좌측 여백 */
+            display: flex;
+            /* 플렉스 박스 설정 */
+            justify-content: space-between;
+            /* 좌우 정렬 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            padding: 0px;
+            /* 좌우 여백 추가 */
+            font-size: 11px;
+            /* 푸터 글자 크기 */
+            color: black;
+            /* 푸터 글자 색상 */
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <div class="header">&emsp;<img src="{% static 'resources/logo.svg' %}" alt="" height="120px"></div>
+    <h2>홍익대 시간표여 내게 오라!</h2>
+    <a href="#" class="button">시간표 만들기!</a>
+    <div>
+        <a href="#" class="small-button">과목 조회</a>
+        <a href="#" class="small-button">수강신청 바로가기</a>
+        <a href="#" class="small-button">수강신청 연습</a>
+    </div>
+    <footer>
+        <span>&emsp;©뉴준스</span>
+        <span>(Feedback mail 주소)&emsp;</span>
+    </footer>
+</body>
+
+</html>
