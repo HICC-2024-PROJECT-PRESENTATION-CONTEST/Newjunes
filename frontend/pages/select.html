@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongcio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Hongcio!</h1>
+        </header>
+        <nav class="navigation">
+            <div class="tab">기본 정보 입력하기</div>
+            <div class="tab">과목 선택하기</div>
+            <div class="tab">우선순위</div>
+            <div class="tab">공강 설정하기</div>
+        </nav>
+        <main>
+            <section class="selection">
+                <div class="major">
+                    <h2>전공</h2>
+                    <h3>이번 학기에 들어야 할 전공</h3>
+                    <form>
+                        <label><input type="radio" name="major" value="전필1"> 전필1</label>
+                        <label><input type="radio" name="major" value="전필2"> 전필2</label>
+                        <label><input type="radio" name="major" value="전필3"> 전필3</label>
+                    </form>
+                    <h3>그외 전공</h3>
+                    <form>
+                        <label><input type="radio" name="other_major" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="other_major" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="other_major" value="전필선택3"> 전필선택3</label>
+                    </form>
+                </div>
+                <div class="electives">
+                    <h2>필수교양</h2>
+                    <h3>이수하지 않은 드래곤볼</h3>
+                    <form>
+                        <label><input type="radio" name="dragonball" value="예술과디자인"> 예술과디자인</label>
+                        <label><input type="radio" name="dragonball" value="제2외국어와한문"> 제2외국어와한문</label>
+                        <label><input type="radio" name="dragonball" value="언어와철학"> 언어와철학</label>
+                    </form>
+                    <h3>이수하지 않은 영어, 논사글, 전기영</h3>
+                    <form>
+                        <label><input type="radio" name="elective_other" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="elective_other" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="elective_other" value="전필선택3"> 전필선택3</label>
+                    </form>
+                </div>
+                <div class="msc">
+                    <h2>MSC</h2>
+                    <h3>수학</h3>
+                    <form>
+                        <label><input type="radio" name="math" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="math" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="math" value="전필선택3"> 전필선택3</label>
+                    </form>
+                    <h3>과학</h3>
+                    <form>
+                        <label><input type="radio" name="science" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="science" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="science" value="전필선택3"> 전필선택3</label>
+                    </form>
+                    <h3>전산</h3>
+                    <form>
+                        <label><input type="radio" name="computing" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="computing" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="computing" value="전필선택3"> 전필선택3</label>
+                    </form>
+                </div>
+                <div class="misc">
+                    <h2>그 외</h2>
+                    <h3>이수한 드래곤볼</h3>
+                    <form>
+                        <label><input type="radio" name="completed" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="completed" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="completed" value="전필선택3"> 전필선택3</label>
+                    </form>
+                    <h3>일반교양</h3>
+                    <form>
+                        <label><input type="radio" name="general" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="general" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="general" value="전필선택3"> 전필선택3</label>
+                    </form>
+                    <h3>타학과 과목</h3>
+                    <form>
+                        <label><input type="radio" name="other_dept" value="전필선택1"> 전필선택1</label>
+                        <label><input type="radio" name="other_dept" value="전필선택2"> 전필선택2</label>
+                        <label><input type="radio" name="other_dept" value="전필선택3"> 전필선택3</label>
+                    </form>
+                </div>
+            </section>
+            <button type="submit">완료</button>
+        </main>
+    </div>
+    <footer class="footer">
+        <p>@뉴준스</p>
+        <p>Feedback mail 주소</p>
+    </footer>
+</body>
+</html>

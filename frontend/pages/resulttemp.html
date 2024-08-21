@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongcio</title>
+    <link rel="stylesheet" href="style_info.css">
+    <link rel="stylesheet" href="style_table.css">
+    <script>
+        function toggleCell(cell) {
+            // 1행과 1열을 제외한 셀인지 확인
+            if (cell.cellIndex > 0 && cell.parentNode.rowIndex > 0) {
+                cell.classList.toggle('checked'); // 체크 상태 토글
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header"><img src="logo.svg" alt="" height="60rem"></div>
+        </header>
+        <nav class="navigation">
+            <div class="tab">기본 정보 입력하기</div>
+            <div class="tab">과목 선택하기</div>
+            <div class="tab">우선순위</div>
+            <div class="tab">공강 설정하기</div>
+        </nav>
+        <section class="content">
+            <table>
+                <thead>
+                    <tr class="shadow"> <!-- 1행에 그림자 효과 적용 -->
+                        <th class="day-header"></th>
+                        <th class="header-cell"><span>월</span></th>
+                        <th class="header-cell"><span>화</span></th>
+                        <th class="header-cell"><span>수</span></th>
+                        <th class="header-cell"><span>목</span></th>
+                        <th class="header-cell"><span>금</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-header"><span>1</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr>
+                        <td class="row-header"><span>2</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr>
+                        <td class="row-header"><span>3</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr>
+                        <td class="row-header"><span>4</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr>
+                        <td class="row-header"><span>5</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr>
+                        <td class="row-header"><span>6</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                    <tr class="shadow"> <!-- 1행에 그림자 효과 적용 -->
+                        <td class="row-header"><span>7</span></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                        <td onclick="toggleCell(this)"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="complete-button">시간표 생성하기</button>
+        </section>
+    </div>
+    <footer class="footer">
+        <span>&emsp;©뉴준스</span>
+        <span>(Feedback mail 주소)&emsp;</span>
+    </footer>
+</body>
+</html>

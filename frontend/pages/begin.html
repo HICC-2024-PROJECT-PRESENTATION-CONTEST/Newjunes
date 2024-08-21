@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍시오 - 시간표 불러오기</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #E6E6E6;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .header {
+            background-color: #4A75c7;
+            color: #FFFFFF;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+            font-family: 'Bagel Fat One', sans-serif;
+            font-size: 40px;
+            position: fixed;
+            /* 고정 위치 설정 */
+            top: 0;
+            /* 맨 위에 고정 */
+            left: 0;
+            /* 좌측 고정 */
+            z-index: 1000;
+            /* 다른 요소 위에 표시 */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            /* 왼쪽 정렬 */
+            width: 100%;
+            height: calc(100vh - 60px);
+            /* 헤더 높이 제외 */
+        }
+
+        .question {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 24px;
+            text-align: left;
+            /* 왼쪽 정렬 */
+            margin-top: 20vh;
+            margin-left: 503px;
+            margin-bottom: 20px;
+            /* X좌표 503으로 고정 */
+            width: 273px;
+            /* 입력 상자와 맞추기 위해 너비 설정 */
+            font-weight: 500;
+            /* 텍스트를 굵게 처리 */
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #abb9d4;
+            /* 버튼 색상 변경 */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            /* 간격 좁힘 */
+            cursor: pointer;
+            box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+            /* 그림자 효과 추가 */
+            transition: background-color 0.3s;
+            /* 호버 효과를 부드럽게 */
+            margin-left: 503px;
+            /* X좌표 503으로 고정 */
+            font-family: 'Pretendard', sans-serif;
+            /* 폰트 설정 추가 */
+        }
+
+        .button:hover {
+            background-color: #a1b2c2;
+            /* 호버 시 색상 변화 */
+        }
+
+        .start-button {
+            width: 273px;
+            /* 가로 크기 */
+            height: 51px;
+            /* 세로 크기 */
+        }
+
+        .load-button {
+            width: 122px;
+            /* 가로 크기 */
+            height: 51px;
+            /* 세로 크기 */
+            margin-left: 800px;
+            /* X좌표 503으로 고정 */
+            margin-top: 15px;
+        }
+
+        .input-field {
+            width: 273px;
+            /* 가로 크기 */
+            height: 46px;
+            /* 세로 크기 */
+            font-family: 'Pretendard', sans-serif;
+            /* 폰트 설정 */
+            color: #e6e6e6;
+            /* 글자색 설정 */
+            background-color: #ffffff;
+            /* 배경색 설정 */
+            border: 1px solid #ffffff;
+            /* 테두리 설정 */
+            padding: 5px;
+            /* 패딩 추가 */
+            margin-top: 10px;
+            /* 여백 추가 */
+            margin-left: 503px;
+            /* X좌표 503으로 고정 */
+            font-size: 20px;
+            position: absolute;
+        }
+
+        footer {
+            background-color: #bcbecc;
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            font-size: 11px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">&emsp;<img src="logo.svg" alt="" height="40px"></div>
+    <div class="container">
+        <div class="question">홍시오를 처음 사용하시나요?</div>
+        <button class="button start-button">처음부터</button>
+        <div class="question">전에 만든 시간표 불러오기</div>
+        <form action="">
+            <input type="text" class="input-field" placeholder="태그를 입력해주세요."></input>
+            <button type="submit" class="button load-button">불러오기</button>
+
+        </form>
+    </div>
+    <footer>
+        <span>&emsp;©뉴준스</span>
+        <span>(Feedback mail 주소)&emsp;</span>
+    </footer>
+</body>
+
+</html>

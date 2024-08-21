@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongcio</title>
+    <link rel="stylesheet" href="style_info.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Hongcio!</h1>
+        </header>
+        <nav class="navigation">
+            <div class="tab">기본 정보 입력하기</div>
+            <div class="tab">과목 선택하기</div>
+            <div class="tab">우선순위</div>
+            <div class="tab">공강 설정하기</div>
+        </nav>
+        <section class="content">
+            <div class="form-group">
+                <label for="major">학과</label>
+                <input type="text" id="major" placeholder="학과를 입력해주세요.">
+                <button>검색</button><br>
+                <label for="student-id">학번</label>
+                <input type="text" id="student-id" placeholder="학번를 입력해주세요."><br>
+                <label for="grade">학년</label>
+                <input type="text" id="grade" placeholder="학년를 입력해주세요.">
+            </div>
+            <div class="subject-history">
+                <h2>교양 과목 수강 이력</h2>
+                <form>
+                    <div class="common-subjects">
+                        <p>(공통교양)</p>
+                        <label><input type="checkbox" name="common-subject" value="예술과디자인"> 예술과디자인</label>
+                        <label><input type="checkbox" name="common-subject" value="제2외국어와한문"> 제2외국어와한문</label>
+                        <label><input type="checkbox" name="common-subject" value="과학과컴퓨터"> 과학과컴퓨터</label>
+                        <label><input type="checkbox" name="common-subject" value="언어와철학"> 언어와철학</label>
+                        <label><input type="checkbox" name="common-subject" value="법과생활"> 법과생활</label>
+                        <label><input type="checkbox" name="common-subject" value="사회와경제"> 사회와경제</label>
+                        <label><input type="checkbox" name="common-subject" value="역사와문화"> 역사와문화</label>
+                    </div>
+                    <div class="general-subjects">
+                        <p>(일반교양)</p>
+                        <label><input type="checkbox" name="general-subject" value="논리적사고와글쓰기"> 논리적사고와글쓰기</label>
+                        <label><input type="checkbox" name="general-subject" value="영어"> 영어</label>
+                        <label><input type="checkbox" name="general-subject" value="전공기초영어"> 전공기초영어</label>
+                        <label><input type="checkbox" name="general-subject" value="법학 글쓰기"> 법학 글쓰기</label>
+                    </div>
+                </form>
+            </div>
+            <div class="online-class-info">
+                <h2>사이버 강의 이수 학점</h2>
+                <input type="number" id="online">
+                <p>*지금까지 이수한 사이버강의의 전체학점을 입력해주세요.</p>
+                <div class="msc">
+                    <h3>MSC</h3>
+                    <div class="msc-group" value="물리1">
+                        <label><input type="checkbox" name="subject" value="물리1">물리1</label>
+                        <label><input type="checkbox" name="subject" value="대학물리1">대학물리1</label>
+                        <label><input type="checkbox" name="subject" value="대학물리실험1">대학물리실험1</label>
+                    </div>
+                    <div class="msc-group" value="물리2">
+                        <label><input type="checkbox" name="subject" value="물리2">물리2</label>
+                        <label><input type="checkbox" name="subject" value="대학물리2">대학물리2</label>
+                        <label><input type="checkbox" name="subject" value="대학물리실험2">대학물리실험2</label>
+                    </div>
+                    <div class="msc-group" value="화학1">
+                        <label><input type="checkbox" name="subject" value="화학1">화학1</label>
+                        <label><input type="checkbox" name="subject" value="대학화학1">대학화학1</label>
+                        <label><input type="checkbox" name="subject" value="대학화학실험1">대학화학실험1</label>
+                    </div>
+                    <div class="msc-group" value="화학2">
+                        <label><input type="checkbox" name="subject" value="화학2">화학2</label>
+                        <label><input type="checkbox" name="subject" value="대학화학2">대학화학2</label>
+                        <label><input type="checkbox" name="subject" value="대학화학실험2">대학화학실험2</label>
+                    </div>
+                </div>
+            </div>
+            <button class="complete-button">완료</button>
+        </section>
+    </div>
+    <footer class="footer">
+        <span>&emsp;©뉴준스</span>
+        <span>(Feedback mail 주소)&emsp;</span>
+    </footer>
+</body>
+</html>
