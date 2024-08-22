@@ -15,6 +15,11 @@ body {
     text-align: center;
 }
 
+img.logo{
+    width: 33vw;
+    min-width: 24rem;
+}
+
 h2 {
     margin: 2.5rem 0;
 
