@@ -29,6 +29,9 @@ ALLOWED_HOSTS = [
     "api.newjunes.skybro2004.com",
     "newjunes.skybro2004.com"
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://api.newjunes.skybro2004.com"
+]
 
 
 # Application definition
