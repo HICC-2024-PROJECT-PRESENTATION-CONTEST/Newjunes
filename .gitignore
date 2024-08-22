@@ -189,7 +189,7 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/linux,django
 
 
-hongcio/main/migration/
+hongcio/main/migrations/
 csrf_token
-*migration/
-*migration/*
+*migrations/
+*migrations/*
