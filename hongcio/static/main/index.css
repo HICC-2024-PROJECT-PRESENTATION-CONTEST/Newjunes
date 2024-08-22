@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+
+    background-color: #4A75c7;
+
+    color: #FFFFFF;
+    font-family: 'Pretendard', sans-serif;
+    text-align: center;
+}
+
+h2 {
+    margin: 2.5rem 0;
+
+    color: #FFFFFF;
+    font-size: 1.5rem;
+}
+
+.button-container{
+    width: 33vw;
+    min-width: 24rem;
+}
+.button-container>.button{
+    width: 100%;
+    padding: 1rem 1rem;
+    margin-bottom: 1.2rem;
+
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.button-container>div{
+    justify-content: space-between;
+}
+.button-container>div>.button{
+    width: 100%;
+}
+.button-container>div>.button:not(:last-child){
+    margin-right: 1.5vw;
+}
