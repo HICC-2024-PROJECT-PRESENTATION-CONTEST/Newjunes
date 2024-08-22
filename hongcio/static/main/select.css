@@ -1,0 +1,140 @@
+body>div{
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    flex: 5;
+    height: 100%;
+}
+
+.selected-lectures-container{
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+
+    position: relative;
+    height: 100%;
+    padding: 1.5rem 3rem;
+    padding-right: 1rem;
+}
+
+.selected-lectures{
+    flex: 5;
+    position: relative;
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    padding-top: 0;
+    /* height: 60vh; */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    color: white;
+    overflow-y: scroll;
+
+}
+.selected-lectures h3{
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0.6rem 1.2rem;
+    margin: 0 -1.2rem;
+    background-color: inherit;
+    font-weight: 500;
+    font-size: 1.6rem;
+
+}
+.selected-lectures.primary{
+    background-color: #7893C8;
+}
+.selected-lectures.non-primary{
+    background-color: #85b464;
+}
+
+.lecture{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.6rem 0;
+}
+.lecture span:not(:last-child){
+    margin-right: 1.2rem;
+}
+.lecture-wrapper{
+    display: flex;
+    align-items: center;
+}
+.lecture .course-name{
+    font-size: 0.8rem;
+}
+.lecture .name{
+    font-size: 1.2rem;
+}
+.lecture button{
+    width: 1.8rem;
+    height: 1.8rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+.lecture button img{
+    width: 100%;
+    height: 100%;
+}
+
+.lecture-select-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+}
+.lecture-select-form input{
+    height: 2rem;
+}
+.lecture-select-form label{
+    height: 2rem;
+    line-height: 2rem;
+}
+.lecture-select-form span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.lecture-select-form *:not(:last-child){
+    margin-right: 0.4rem;
+}
+.lecture-select-form input[type=text]{
+    width: 5rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.lecture-select-form button{
+    height: 2rem;
+    padding: 0 0.4rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #c8d9fa;
+    font-size: 1rem;
+}
+
+
+.button-done-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1.5rem 1rem;
+    padding-left: 0;
+}
+.button.done{
+    height: 3rem;
+    padding: 0 0.6rem;
+    font-size: 1.5rem;
+}

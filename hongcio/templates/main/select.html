@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}홍시오 - 과목 선택{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/select.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+{% load static %}
+{% include 'main/header.html' %}
+<div class="flex">
+    <span id="trash" style="display: none;">{% static 'resources/trash.svg' %}</span>
+    <iframe src="https://cn.hongik.ac.kr/app/timetable/">
+
+    </iframe>
+    <div class="selected-lectures-container">
+        <div class="selected-lectures primary">
+            <h3>중요도 높음</h3>
+            <!-- <div class="lecture">
+                <span class="lecture-wrapper">
+                    <span class="course-name">학수번호1</span>
+                    <span class="name">과목이름</span>
+                </span>
+                <span class="lecture-wrapper">
+                    <span class="department">학과</span>
+                    <span class="classification">전공/교양</span>
+                    <button onclick="deleteLecture('l학수번호');">
+                        <img src="{% static 'resources/trash.svg' %}" alt="X">
+                    </button>
+                </span>
+            </div> -->
+        </div>
+        <div class="selected-lectures non-primary">
+            <h3>중요도 낮음</h3>
+
+        </div>
+        <div class="lecture-select-form">
+            <input type="text" name="course-name" pattern="[0-9]+" required placeholder="학수번호">
+            <span>
+                <label>중요도: </label>
+                <input type="radio" name="is-primary" id="primary" value="1" checked>
+                <label for="primary">높음</label>
+                <input type="radio" name="is-primary" id="non-primary" value="0">
+                <label for="non-primary">낮음</label>
+            </span>
+            <button id="submit" onclick="selectLecture()">추가</button>
+        </div>
+    </div>
+    <div class="button-done-wrapper">
+        <a href="/break" class="button done">완료!</a>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'main/select.js' %}"></script>
+{% include 'main/footer.html' %}
+{% endblock %}
