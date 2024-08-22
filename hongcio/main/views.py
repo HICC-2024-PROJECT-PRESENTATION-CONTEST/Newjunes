@@ -18,17 +18,20 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from .models import Lecture, Division
 from django.http.response import JsonResponse
-from django.core import serializers
-# from django.views.decorators.csrf import csrf_exempt
-# @csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
+from django.db.utils import IntegrityError
+@csrf_exempt
 def lecture(request):
     if request.method=='GET':
         course_number = request.GET.get('course-number', None)
         if course_number==None:
-            raise Http404("학수번호가 입력되지 않았습니다.")
+            return JsonResponse({"message": "학수번호를 입력하지 않았습니다."}, status=400)
         
-        lecture = get_object_or_404(Lecture, pk=course_number)
-        lecture_json = serializers.serialize('json', [lecture])
+        try:
+            lecture = Lecture.objects.get(pk=course_number)
+        except Lecture.DoesNotExist:
+            return JsonResponse({"message": "강의를 찾을 수 없습니다."}, status=404)
+
         response = {
             'name': lecture.name,
             'courseNumber': lecture.course_number,
@@ -62,7 +65,11 @@ def lecture(request):
         lecture.classification = data.get("classification", None)
         lecture.credit = data.get("credit", None)
         lecture.department = data.get("department", None)
-        lecture.save()
+        try:
+            lecture.save()
+        except IntegrityError:
+            return JsonResponse({"message": "강의 정보를 잘못 입력했습니다."}, status=400)
+
 
         division = Division()
         division.lecture = lecture
@@ -74,6 +81,9 @@ def lecture(request):
         division.applicant = data.get("applicant", None)
         division.annotation = data.get("annotation", None)
         division.capacity = data.get("capacity", None)
-        division.save()
+        try:
+            division.save()
+        except IntegrityError:
+            return JsonResponse({"message": "강의 정보를 잘못 입력했습니다."}, status=400)
 
         return JsonResponse(data)
