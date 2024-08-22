@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     "newjunes.skybro2004.com"
 ]
 CSRF_TRUSTED_ORIGINS = [
+    "https://newjunes.skybro2004.com"
     "https://api.newjunes.skybro2004.com"
 ]
 

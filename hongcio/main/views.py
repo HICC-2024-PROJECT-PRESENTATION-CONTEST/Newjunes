@@ -10,12 +10,8 @@ def index(request):
     return render(request, 'main/index.html')
 
 
-def search(request):
-    if request.method=='POST':
-        return
-
-    if request.method=='GET':
-        return render(request, 'main/search.html')
+def select(request):
+    return render(request, 'main/select.html')
 
 
 from django.http import Http404
