@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}홍시오{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/result.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+{% include 'main/header.html' %}
+<p id="lectures" style="display: none;">
+    {{ lectures }}
+</p>
+<p id="result" style="display: none;">
+    {{ result }}
+</p>
+<div class="flex">
+    <div class="table-wrapper">
+        <table>
+            <tr class="header">
+                <th class="header"></th>
+                {% for i in '월화수목금'|make_list %}
+                    <th>{{ i }}</th>
+                {% endfor %}
+            </tr>
+            
+            {% with ''|center:14 as range %}
+            {% for i in range %}
+            <tr>
+                <td class="header">
+                    {{ forloop.counter }}교시
+                </td>
+                {% with ''|center:5 as range %}
+                {% for j in range %}
+                <td id="r{{ forloop.parentloop.counter }}c{{ forloop.counter }}">
+                    <!-- {{ forloop.parentloop.counter }}, {{ forloop.counter }} -->
+                </td>
+                {% endfor %}
+                {% endwith %}
+            </tr>
+            {% endfor %}
+            {% endwith %}
+            
+        </table>
+    </div>
+
+    <div class="info-container">
+        <h2>시간표가 완성되었어요!</h2>
+        <div class="lectures">
+            <h3>담은 과목들</h3>
+            <div class="lecture-wrapper">
+                <div class="lecture">
+                    <p class="course-number">학수번호</p>
+                    <p class="name">이름</p>
+                    <p class="professor">교수</p>
+                </div>
+                <div class="lecture">
+                    <p class="course-number">123456-12</p>
+                    <p class="name">ㅁㄴㅇㄹ</p>
+                    <p class="professor">Andrew John Monteith</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex nav">
+            <button class="button" onclick="setCase(--caseNumber)">< 이전 시간표</button>
+            <button class="button" onclick="setCase(++caseNumber)">다음 시간표 ></button>
+        </div>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'main/result.js' %}"></script>
+{% include 'main/footer.html' %}
+{% endblock %}

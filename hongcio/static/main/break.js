@@ -60,6 +60,7 @@ function serialzieBreaks(breaks){
 
 function loadBreaks(){
     var breaks = getCookie("break");
+    if(breaks==undefined || breaks=="") return;
 
     breaks = breaks.split(",");
 
@@ -72,3 +73,41 @@ function loadBreaks(){
 }
 
 loadBreaks();
+
+
+function generateSchedule(){
+    var form = document.createElement("form");
+    var param = new Array();
+    var input = new Array();
+
+    form.action = "https://newjunes.skybro2004.com/generate";
+    form.method = "POST";
+
+    breaks = getCookie('break');
+    if(breaks!=""){
+        breaks = breaks.split(',');
+        for(var i=0; i<breaks.length; i++){
+            breaks[i] = breaks[i].slice(1).split("l");
+            breaks[i][0] = parseInt(breaks[i][0]) - 1
+            breaks[i][1] = parseInt(breaks[i][1]) - 1
+        }
+    }
+    
+    param.push(['primary', JSON.stringify(getCookie('primary').split(','))]);
+    param.push(['nonPrimary', JSON.stringify(getCookie('nonPrimary').split(','))]);
+    // param.push(['break', JSON.stringify(getCookie('break').split(','))]);
+    param.push(['break', JSON.stringify(breaks)]);
+
+
+    for (var i = 0; i < param.length; i++) {
+        input[i] = document.createElement("input");
+        input[i].setAttribute("type", "hidden");
+        input[i].setAttribute('name', param[i][0]);
+        input[i].setAttribute("value", param[i][1]);
+        form.appendChild(input[i]);
+    }
+    document.body.appendChild(form);
+    form.submit();
+    // console.log(param)
+    // console.log(input)
+}

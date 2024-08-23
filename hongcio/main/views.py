@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Lecture, Division
 import json
 
 # Create your views here.
@@ -18,9 +19,12 @@ def set_break(request):
     return render(request, 'main/break.html')
 
 
+def result(request, schedules):
+    print(schedules)
+    return render(request, 'main/result.html')
+
+
 from django.http import Http404
-from django.shortcuts import get_object_or_404
-from .models import Lecture, Division
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.utils import IntegrityError
@@ -91,3 +95,77 @@ def lecture(request):
             return JsonResponse({"message": "강의 정보를 잘못 입력했습니다."}, status=400)
 
         return JsonResponse(data)
+
+
+from .modules import schedule_generator
+@csrf_exempt
+def generate(request):
+    if request.method=='POST':
+        result = {}
+
+        # data = json.loads(request.body)
+        primary = json.loads(request.POST.get("primary"))
+        non_primary = json.loads(request.POST.get("nonPrimary"))
+        breaks = json.loads(request.POST.get("break"))
+
+        lectures = {}
+
+        for course_number in primary:
+            lecture = Lecture.objects.get(pk=course_number)
+            form = {
+                "name": lecture.name,
+                "courseNumber": lecture.course_number,
+                "division": {},
+                "primary": 1
+            }
+            for division in lecture.division_set.all():
+                form["division"][division.division_number] = {
+                    "professor": division.professor,
+                    "divisionNumber": division.division_number,
+                    "period": schedule_generator.convert_period_v2(division.period)
+                }
+            lectures[course_number] = form
+        
+        for course_number in non_primary:
+            lecture = Lecture.objects.get(pk=course_number)
+            form = {
+                "name": lecture.name,
+                "courseNumber": lecture.course_number,
+                "division": {},
+                "primary": 0
+            }
+            for division in lecture.division_set.all():
+                form["division"][division.division_number] = {
+                    "professor": division.professor,
+                    "divisionNumber": division.division_number,
+                    "period": schedule_generator.convert_period_v2(division.period)
+                }
+            lectures[course_number] = form
+
+        result["lectures"] = lectures
+
+        lectures["000000"] = {
+            "name": "break",
+            "periods": breaks
+        }
+
+        res = schedule_generator.generate_schedule(json.dumps(lectures))
+        if res==[]:
+            return redirect('main/failed.html')
+        
+        for schedule in res:
+            for i in range(len(schedule)):
+                schedule[i] = list(schedule[i].split("-"))
+
+        result["result"] = res
+
+        print(result)
+        return render(request, 'main/result.html', result)
+    else:
+        print("POST가 아닌 다른게 들어옴")
+
+
+
+def generate_table_html(result):
+
+    return render(request, 'main/table.html', context)
