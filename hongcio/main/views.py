@@ -14,6 +14,10 @@ def select(request):
     return render(request, 'main/select.html')
 
 
+def set_break(request):
+    return render(request, 'main/break.html')
+
+
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from .models import Lecture, Division

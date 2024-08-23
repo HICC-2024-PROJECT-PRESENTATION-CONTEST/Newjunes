@@ -1,0 +1,77 @@
+body>div{
+    height: 100%;
+}
+
+.table-wrapper{
+    flex: 8;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+
+
+/* .table{
+    width: 100%;
+    display: table;
+    height: 100%;
+}
+.row{
+    display: table-row;
+    min-height: 2rem;
+}
+.cell{
+    display: table-cell;
+    border: 1px solid black;
+    width: 2rem;
+    min-height: 2rem;
+} */
+table, th, td{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    /* height: 100%; */
+}
+
+table{
+    width: 100%;
+    max-width: 36rem;
+    height: 100%;
+}
+th, td{
+    width: 2rem;
+    /* height: 2rem; */
+    /* min-height: 2rem; */
+    /* height: 100%; */
+    cursor: pointer;
+}
+tr:first-child{
+    background-color: #b3e5fc;
+}
+th:first-child, td:first-child,
+th:last-child, td:last-child{
+    width: 1.2rem;
+    max-width: 1.2rem ;
+    text-align: center;
+}
+
+td.checked{
+    background-color: #ccc;
+}
+
+
+.button-done-wrapper{
+    flex: 2;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    padding: 3rem 6rem;
+    padding-left: 0;
+}
+
+.button.done{
+    font-size: 1.5rem;
+    height: 3rem;
+    padding: 0 1.6rem;
+}

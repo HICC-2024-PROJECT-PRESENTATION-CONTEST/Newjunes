@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}홍시오 - 공강 선택{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/break.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+{% include 'main/header.html' %}
+
+<div class="flex">
+    <div class="table-wrapper">
+        <table>
+            <tr class="header">
+                <th class="header"></th>
+                {% for i in '월화수목금'|make_list %}
+                    <th onclick="setBreak('*', {{ forloop.counter }});">
+                        {{ i }}
+                    </th>
+                {% endfor %}
+                <th class="header"></th>
+            </tr>
+
+            {% with ''|center:14 as range %}
+            {% for i in range %}
+            <tr>
+                <td class="header" onclick="setBreak({{ forloop.counter }}, '*');">
+                    {{ forloop.counter }}교시
+                </td>
+                {% with ''|center:5 as range %}
+                {% for j in range %}
+                <td id="r{{ forloop.parentloop.counter }}c{{ forloop.counter }}" onclick="setBreak({{ forloop.parentloop.counter }}, {{ forloop.counter }});">
+                    <!-- {{ forloop.parentloop.counter }}, {{ forloop.counter }} -->
+                </td>
+                {% endfor %}
+                {% endwith %}
+                <td class="header" onclick="setBreak({{ forloop.counter }}, '*');">
+                    {{ forloop.counter|add:"8" }}:00
+                </td>
+            </tr>
+            {% endfor %}
+            {% endwith %}
+            
+        </table>
+    </div>
+    <div class="button-done-wrapper">
+        <a href="generate" class="button done">완료</a>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'main/break.js' %}"></script>
+{% include 'main/footer.html' %}
+{% endblock %}
