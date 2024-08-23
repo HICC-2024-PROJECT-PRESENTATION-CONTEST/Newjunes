@@ -100,18 +100,6 @@ function deleteLecture(courseNumber){
 }
 
 
-function setCookie(name, value, exp) {
-    var date = new Date();
-    date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000); 
-    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
-}
-
-function getCookie(name){
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
-};
-
-
 function saveSelectedLectures(){
     setCookie('primary', selectedPrimaryLectures.toString(), 30);
     setCookie('nonPrimary', selectedNonPrimaryLectures.toString(), 30);
