@@ -24,6 +24,10 @@ def result(request, schedules):
     return render(request, 'main/result.html')
 
 
+def failed(request):
+    return render(request, 'main/failed.html')
+
+
 from django.http import Http404
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -151,7 +155,7 @@ def generate(request):
 
         res = schedule_generator.generate_schedule(json.dumps(lectures))
         if res==[]:
-            return redirect('main/failed.html')
+            return redirect('failed')
         
         for schedule in res:
             for i in range(len(schedule)):

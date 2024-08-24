@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}홍시오{% endblock %}
+{% block title %}홍시오 - 시간표 생성 성공!{% endblock %}
 
 {% block style %}
 {% load static %}
@@ -18,7 +18,7 @@
 </p>
 <div class="flex">
     <div class="table-wrapper">
-        <table>
+        <table class="shadow">
             <tr class="header">
                 <th class="header"></th>
                 {% for i in '월화수목금'|make_list %}
@@ -48,7 +48,7 @@
 
     <div class="info-container">
         <h2>시간표가 완성되었어요!</h2>
-        <div class="lectures">
+        <div class="lectures shadow">
             <h3>담은 과목들</h3>
             <div class="lecture-wrapper">
                 <div class="lecture">
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex nav">
+        <div class="flex nav shadow">
             <button class="button" onclick="setCase(--caseNumber)">< 이전 시간표</button>
             <button class="button" onclick="setCase(++caseNumber)">다음 시간표 ></button>
         </div>

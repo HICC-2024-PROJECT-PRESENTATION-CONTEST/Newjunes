@@ -13,7 +13,7 @@
 
 <div class="flex">
     <div class="table-wrapper">
-        <table>
+        <table class="shadow">
             <tr class="header">
                 <th class="header"></th>
                 {% for i in '월화수목금'|make_list %}
@@ -47,6 +47,8 @@
         </table>
     </div>
     <div class="button-done-wrapper">
+        <h2>공강 설정하기</h2>
+        <p>비우고 싶은 시간을 클릭하세요.</p>
         <a onclick="generateSchedule();" class="button done">완료</a>
     </div>
 </div>

@@ -10,5 +10,6 @@ urlpatterns = [
     path('result', views.result, name='result'),
     path('lecture', views.lecture, name='lecture'),
     path('generate', views.generate, name='generate'),
+    path('failed', views.failed, name='failed'),
     path('generate-table-html', views.generate_table_html)
 ]

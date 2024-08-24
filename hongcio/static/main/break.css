@@ -3,11 +3,11 @@ body>div{
 }
 
 .table-wrapper{
-    flex: 8;
-    height: 100%;
     display: flex;
+    flex: 7;
     justify-content: center;
     align-items: center;
+    height: 100%;
     padding: 3rem 2rem;
 }
 
@@ -36,8 +36,8 @@ table, th, td{
 
 table{
     width: 100%;
-    max-width: 36rem;
     height: 100%;
+    max-width: 36rem;
 }
 th, td{
     width: 2rem;
@@ -52,8 +52,8 @@ tr:first-child{
 th:first-child, td:first-child,
 th:last-child, td:last-child{
     width: 1.2rem;
-    max-width: 1.2rem ;
     text-align: center;
+    max-width: 1.2rem ;
 }
 
 td.checked{
@@ -62,17 +62,25 @@ td.checked{
 
 
 .button-done-wrapper{
-    flex: 2;
     display: flex;
-    flex-direction: column-reverse;
+    flex: 3;
+    flex-direction: column;
     align-items: flex-end;
     padding: 3rem 6rem;
     padding-left: 0;
 }
+.button-done-wrapper h2{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.button-done-wrapper p{
+    flex: 1;
+    width: 100%;
+}
 
 .button.done{
-    font-size: 1.5rem;
     height: 3rem;
     padding: 0 1.6rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }

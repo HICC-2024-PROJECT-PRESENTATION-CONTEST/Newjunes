@@ -16,7 +16,7 @@
 
     </iframe>
     <div class="selected-lectures-container">
-        <div class="selected-lectures primary">
+        <div class="selected-lectures primary shadow">
             <h3>중요도 높음</h3>
             <!-- <div class="lecture">
                 <span class="lecture-wrapper">
@@ -32,12 +32,12 @@
                 </span>
             </div> -->
         </div>
-        <div class="selected-lectures non-primary">
+        <div class="selected-lectures non-primary shadow">
             <h3>중요도 낮음</h3>
 
         </div>
-        <div class="lecture-select-form">
-            <input type="text" name="course-name" pattern="[0-9]+" required placeholder="학수번호">
+        <div class="lecture-select-form shadow">
+            <input type="text" name="course-name" pattern="[0-9]+" required placeholder="학수번호" onkeypress="">
             <span>
                 <label>중요도: </label>
                 <input type="radio" name="is-primary" id="primary" value="1" checked>

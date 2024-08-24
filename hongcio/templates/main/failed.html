@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}홍시오 - 시간표 생성 실패{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/failed.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+{% include 'main/header.html' %}
+
+<h2>시간표를 생성하지 못했어요!</h2>
+<p>중요도 높음 과목을 줄이거나, 공강 시간을 줄여주세요!</p>
+<div class="flex">
+    <a class="button" href="/select">과목 선택 페이지로 가기</a>
+    <a class="button" href="/break">공강 선택 페이지로 가기</a>
+</div>
+
+{% include 'main/footer.html' %}
+{% endblock %}
